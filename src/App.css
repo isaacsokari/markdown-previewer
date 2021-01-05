@@ -1,38 +1,119 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden auto;
+  background: #1a0841;
+  color: #b9eaf5;
+}
+
+body #root {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body .main {
+  width: 100%;
+  padding: 4rem;
+  display: flex;
+  gap: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 768px) {
+  body .main {
+    flex-direction: column;
+    padding: initial;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.editor-container {
+  width: 40%;
+}
+@media screen and (max-width: 768px) {
+  .editor-container {
+    width: 100%;
+  }
+}
+.editor-container .editor {
+  min-height: 80vh;
+  width: 100%;
+  padding: 2rem;
+  background: #b9eaf5ee;
+  color: #1a0841;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 768px) {
+  .editor-container .editor {
+    min-height: 15rem;
+    width: 100%;
+    padding: 1rem;
+    margin: auto;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 768px) {
+  h3 {
+    text-align: center;
+  }
+  h3#heading-3- {
+    text-align: left;
+  }
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1rem;
+}
+.preview pre {
+  background: #3a3a3a;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 1rem;
+  align-self: center;
+}
+.preview pre code {
+  padding: 0;
+  max-width: 100%;
+  word-wrap: wrap;
+}
+.preview code {
+  font-family: monospace;
+  background: #3a3a3a;
+  padding: 0 4px;
+}
+.preview a {
+  color: currentcolor;
+}
+.preview p:last-of-type {
+  display: flex;
+}
+.preview p:last-of-type img {
+  max-height: 10rem;
+  object-fit: contain;
+  align-self: center;
+  margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+  .preview {
+    width: 100%;
+  }
+  .preview code {
+    overflow: auto;
   }
 }

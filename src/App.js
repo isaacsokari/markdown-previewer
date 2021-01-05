@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
+
+import Editor from './components/Editor';
+import Preview from './components/Previewer';
+
 import './App.css';
 
-function App() {
+import placeholderText from './data/placeholder';
+
+const App = () => {
+  const [markdownText, setMarkdownText] = React.useState(placeholderText);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>MarkDown Previewer</h1>
+      <div className="main">
+      <Editor {...{ markdownText, setMarkdownText }} />
+      <Preview {...{ markdownText }} />
+      </div>
+    </>
   );
-}
+};
 
 export default App;
+
